@@ -1,7 +1,6 @@
 # 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
 # IAPR-2- Module 2 - FoC
-## 3. Implementation of programs using conditional statements.
-## 4. Implementation of programs using various control statements.
+
 # Ex.No:6
   Build a C program to input a student’s marks in three subjects (Math, Science, and English). Calculate the average marks and determine the grade using nested if-else statements with safe floating-point comparisons based on the following grading criteria:
     
@@ -56,12 +55,51 @@
 ### Step 11:
   Stop
 # Program:
+```c
+#include <stdio.h>
+
+int main() {
+    float math, science, english;
+    float average;
+
+       printf("Enter marks for Math: ");
+    scanf("%f", &math);
+
+    printf("Enter marks for Science: ");
+    scanf("%f", &science);
+
+    printf("Enter marks for English: ");
+    scanf("%f", &english);
+
+   
+    average = (math + science + english) / 3.0;
+
+        printf("\nAverage Marks: %.2f\n", average);
+
+   
+    if (average >= 90.0) {
+        printf("Grade: A\n");
+    }
+    else if (average >= 75.0 && average < 90.0) {
+        printf("Grade: B\n");
+    }
+    else if (average >= 50.0 && average < 75.0) {
+        printf("Grade: C\n");
+    }
+    else {
+        printf("Grade: F\n");
+    }
+
+    return 0;
+}
+
+```
 # Output:
+<img width="1628" height="670" alt="new1" src="https://github.com/user-attachments/assets/f22f84f5-ff75-4833-80ac-3f9930003ff2" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
-# IAPR-2- Module 2 - FoC
 # Ex.No:7
   Develop a C program to display the multiplication table of a given number (15) up to 10.
 # Date : 
@@ -88,12 +126,29 @@ Thus, the program was implemented and executed successfully, and the required ou
   Stop
 
 # Program:
+```c
+#include <stdio.h>
+
+int main() {
+    int i;
+
+    printf("Multiplication Table of 15:\n");
+
+    for (i = 1; i <= 10; i++) {
+        printf("15 x %d = %d\n", i, 15 * i);
+    }
+
+    return 0;
+}
+
+```
 # Output:
+<img width="1538" height="671" alt="new2" src="https://github.com/user-attachments/assets/1ef47428-3dcd-4227-bbfb-f56ed4aa7bc1" />
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
-# IAPR-2- Module 2 - FoC
 # Ex.No:8
   Develop a C program to check whether a given number is prime or not.
 # Date : 
@@ -131,13 +186,46 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 7:   
   Stop
 # Program:
+```c
+#include <stdio.h>
+
+int main() {
+    int num, i = 2, isPrime = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+   
+    if (num <= 1) {
+        isPrime = 0;
+    }
+
+
+    while (i <= num / 2 && isPrime) {
+        if (num % i == 0) {
+            isPrime = 0;
+        }
+        i++;
+    }
+
+    
+    if (isPrime)
+        printf("%d is a Prime number.\n", num);
+    else
+        printf("%d is NOT a Prime number.\n", num);
+
+    return 0;
+}
+
+```
 # Output:
+
+<img width="1600" height="674" alt="new3" src="https://github.com/user-attachments/assets/3fef9aaa-1ac9-4dbb-943d-655184daf55b" />
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
-
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
-# IAPR-2- Module 2 - FoC
 # Ex.No:9
   Generate the C code to display the pattern below.  
  ``` 
@@ -179,13 +267,43 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 8:   
   Stop
 # Program:
+```c
+include <stdio.h>
+
+int main() {
+    int i, j;
+
+    
+    for (i = 1; i <= 5; i++) {
+        printf("%d", i);
+    }
+    printf("\n");
+
+    
+    for (i = 2; i <= 4; i++) {
+        printf("%d", i);
+        for (j = 1; j <= 3; j++) {
+            printf(" ");
+        }
+        printf("%d\n", 6 - i);
+    }
+
+    // Last row
+    for (i = 5; i >= 1; i--) {
+        printf("%d", i);
+    }
+
+    return 0;
+}
+
+```
 # Output:
+
+<img width="1380" height="721" alt="new4" src="https://github.com/user-attachments/assets/faab4959-16ce-4107-89f1-6f15bf9fec28" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
-  
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M2
-# IAPR-2- Module 2 - FoC
 # Ex.No:10
   Generate the C code to display the pattern below.  
   
@@ -232,6 +350,31 @@ Thus, the program was implemented and executed successfully, and the required ou
   Decrease i by 1 and go back to Step 6.
 ### Step 8:
   Stop
+# Program:
+```c
+#include<stdio.h>
+int main (){
+    int a = 7;
+    int b = 0;
+    printf("%d\n", b);
+    for (int i = a;i>=1;i--){
+        for (int j = i;j<=a;j++){
+            printf("%d ", j);
+        }
+        printf("%d ", b);
+        for (int k = a;k>=i;k--){
+            printf("%d ", k);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+# Output:
+<img width="1360" height="669" alt="new5" src="https://github.com/user-attachments/assets/3389772a-12c8-4151-afcf-1cb956560c1a" />
+
+
+
 # Result:
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
